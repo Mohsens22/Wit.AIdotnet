@@ -7,10 +7,10 @@ namespace Wit.ai
     {
         public Entity(string id, string doc = null, Dictionary<dynamic, dynamic> values = null, Dictionary<dynamic, dynamic> lookups = null)
         {
-            this.Id = id;
-            this.Doc = doc;
-            this.Values = values;
-            this.Lookups = lookups;
+            Id = id;
+            Doc = doc;
+            Values = values;
+            Lookups = lookups;
         }
 
         [JsonProperty("id")]

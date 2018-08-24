@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Wit.ai.Models;
-
-namespace Wit.ai.Utils
+﻿namespace Wit.ai.Utils
 {
     public static class Extentions
     {

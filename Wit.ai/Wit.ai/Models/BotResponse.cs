@@ -8,8 +8,6 @@ namespace Wit.ai
     /// </summary>
     public class BotResponse
     {
-
-
         /// <summary>
         /// Wit context. This is just a wrapper of a Dictionary
         /// </summary>
@@ -22,8 +20,8 @@ namespace Wit.ai
 
         public BotResponse(WitContext context)
         {
-            this.Context = context;
-            this.Messages = new List<string>();
+            Context = context;
+            Messages = new List<string>();
         }
     }
 }

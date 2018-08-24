@@ -1,8 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Wit.ai.Models
 {
@@ -15,11 +11,11 @@ namespace Wit.ai.Models
         [JsonProperty("thread_id")]
         public int ThreadId { get; set; }
 
-        public MessageRequest(string query, string msgId = "", int threadId = 0) 
+        public MessageRequest(string query, string msgId = "", int threadId = 0)
         {
-            this.Query = query;
-            this.MsgId = msgId;
-            this.ThreadId = threadId;
+            Query = query;
+            MsgId = msgId;
+            ThreadId = threadId;
         }
     }
 }
