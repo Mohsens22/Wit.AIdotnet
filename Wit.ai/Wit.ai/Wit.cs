@@ -15,7 +15,7 @@ namespace Wit.ai
         /// <summary>
         /// This parameter is a date that represents the “version” of the Wit API. Default value is 20170107
         /// </summary>
-        public string WIT_API_VERSION = "20170107";
+        public string WIT_API_VERSION = "20170307";
         string LEARN_MORE = "Learn more at https://wit.ai/docs/quickstart";
 
         RestClient client;
@@ -293,49 +293,6 @@ namespace Wit.ai
 
             return _RunActions(sessionId, currentRequest, null, response, maxSteps - 1, verbose);
         }
-
-        // public IList<string> GetAllEntities()
-        // {
-        //    var request = new RestRequest("entities", Method.GET);
-
-        //    IRestResponse<List<string>> responseObject = client.Execute<List<string>>(request);
-
-        //    return responseObject.Data;
-        // }
-
-        // public void DeleteEntity(string entityId)
-        // {
-        //    var request = new RestRequest($"entities/{entityId}", Method.DELETE);
-
-        //    IRestResponse responseObject = client.Execute(request);
-        // }
-
-        // public void DeleteValueFromEntity(string entityId, string entityValue, string expressionValue)
-        // {
-        //    var request = new RestRequest($"entities/{entityId}/values/{entityValue}/expressions/{expressionValue}", Method.DELETE);
-
-        //    IRestResponse responseObject = client.Execute(request);
-        // }
-
-        // public void DeleteExpressionFromEntity(string entityId, string entityValue)
-        // {
-        //    var request = new RestRequest($"entities/{entityId}/values/{entityValue}", Method.DELETE);
-
-        //    IRestResponse responseObject = client.Execute(request);
-        // }
-
-        // public EntityResponse CreateEntity(Entity entity)
-        // {
-        //    var request = new RestRequest("entities", Method.POST);
-        //    request.RequestFormat = DataFormat.Json;
-
-        //    request.AddBody(JsonConvert.SerializeObject(entity));
-
-        //    IRestResponse responseObject = client.Execute(request);
-        //    EntityResponse response = JsonConvert.DeserializeObject<EntityResponse>(responseObject.Content);
-
-        //    return response;
-        // }
 
         void ThrowIfActionMissing(string actionName)
         {
