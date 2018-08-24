@@ -2,9 +2,11 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using Wit.ai.Models;
+using Wit.ai.Utils;
 
 namespace Wit.ai
 {
@@ -78,8 +80,20 @@ namespace Wit.ai
 
             return response;
         }
-
-
+        /// <summary>
+        /// Sends a voice to the wit.ai, gets a messge
+        /// </summary>
+        /// <param name="soundLocation">The location of the voice</param>
+        /// <returns>Message response</returns>
+        public MessageResponse SendVoice(FileInfo soundLocation)
+        {
+            var request = new RestRequest("speech", Method.POST);
+            request.AddHeader("Transfer-encoding", "chunked");
+            request.AddFile(soundLocation.Name, soundLocation.FullName, soundLocation.Extension.ToContentType());
+            IRestResponse responseObject = client.Execute(request);
+            MessageResponse response = JsonConvert.DeserializeObject<MessageResponse>(responseObject.Content);
+            return response;
+        }
         /// <summary>
         /// Returns what your bot should do next. The next step can be either answering to the user, performing an action, or waiting for further requests.
         /// </summary>
