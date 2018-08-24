@@ -15,7 +15,7 @@
 
 ### Versioning
 
-The default API version is `20170107`.
+The default API version is `20170307`.
 You can target a specific version by setting the variable `WIT_API_VERSION`.
 
 ### Overview
